@@ -82,7 +82,7 @@ function App() {
               </button>
             </div>
             <br />
-            <code style={{position: 'fixed', bottom: '0', paddingBottom: '1rem', color: 'lightblue', textAlign: 'center', width: '90%'}}>
+            <code style={{position: 'fixed', bottom: '0', paddingBottom: '1rem', color: 'white', textAlign: 'center', width: '90%'}}>
               This experience is not optimized for mobile. Please visit this page on a desktop device.
             </code>
         </motion.div>

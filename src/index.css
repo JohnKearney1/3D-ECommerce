@@ -82,7 +82,7 @@ button {
   margin: 0;
   background-color: black;
   cursor: pointer;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   padding: 0.5rem 0.75rem;
   border: 1px solid white;
 }
