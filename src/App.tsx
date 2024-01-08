@@ -4,6 +4,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import logo from './assets/img/logo192.png';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import DownloadBTN from './components/DownloadBTN';
 
 function App() {
 
@@ -29,6 +30,16 @@ function App() {
 
   return (
     <div className="App">
+
+      {/* Countdown Timer at the top */}
+      <motion.div className='App-Container-2'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <code>{countdownString} :: Archive Ticks</code>
+        </motion.div>
+
         <motion.div className='App-Container'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -39,25 +50,30 @@ function App() {
           <br />
           <div className='App-Container-Sub'>
             <div style={{display: 'flex', justifyContent: 'flex-start', flexDirection: 'column'}}>
-              <p>- 15 Drum Licks</p>
-              <p>- 5 Drum Fills</p>
-              <p>- 5 Drum Beats</p>
+                <p>10 Hi-Hats</p>
+                <p>10 Open Hats</p>
+                <p>11 Bass Sounds</p>
+                <p>5 Kicks</p>
+                <p>40 Drum Licks</p>
+                <p>15 Piano Riffs</p>
+                <p>35 Starters</p>
+                <p>14 Vocal Chops</p>
+                <p>40 SFX + Percs</p>
+                <p>15 Piano Midis</p>
+                <p>8 Full Length Samples (demos)</p>
+                <p>+ 4 Preset Banks</p>
             </div>
             <br />
-            <button>
-              Download 
-              <DownloadIcon style={{fontSize: '1.25rem'}}/>
-            </button>
+            <div className='DownloadBTN-Container'>
+              <DownloadBTN />
+              <DownloadBTN free/>
+            </div>
           </div>
-          
         </motion.div>
-        <motion.div className='App-Container-2'
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <code>{countdownString}</code>
-        </motion.div>
+
+        
+
+        {/* Mobile shit */}
         <motion.div className='Mobile-Warning'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -70,16 +86,25 @@ function App() {
             <h5>kearneyonline</h5>
             <br />
             <div className='App-Container-Sub'>
-              <div style={{display: 'flex', justifyContent: 'flex-start', flexDirection: 'column'}}>
-                <p>- 15 Drum Licks</p>
-                <p>- 5 Drum Fills</p>
-                <p>- 5 Drum Beats</p>
+              <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', textAlign: 'center'}}>
+                <p>10 Hi-Hats</p>
+                <p>10 Open Hats</p>
+                <p>11 Bass Sounds</p>
+                <p>5 Kicks</p>
+                <p>40 Drum Licks</p>
+                <p>15 Piano Riffs</p>
+                <p>35 Starters</p>
+                <p>14 Vocal Chops</p>
+                <p>40 SFX + Percs</p>
+                <p>15 Piano Midis</p>
+                <p>8 Full Length Samples (demos)</p>
+                <p>+ 4 Preset Banks</p>
               </div>
               <br />
-              <button>
-                Download 
-                <DownloadIcon style={{fontSize: '1.25rem'}}/>
-              </button>
+              <div className='DownloadBTN-Container'>
+                <DownloadBTN />
+                <DownloadBTN free/>
+              </div>
             </div>
             <br />
             <code style={{position: 'fixed', bottom: '0', paddingBottom: '1rem', color: 'white', textAlign: 'center', width: '90%'}}>
