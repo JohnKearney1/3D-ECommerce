@@ -26,7 +26,7 @@
   /* Center on the page */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   position: absolute;
   top: 0%;
@@ -65,6 +65,8 @@
   justify-content: center;
   pointer-events: all;
   gap: 1rem;
+  user-select: none;
+  width: 100%;
 }
 
 .Spline-Container {
@@ -88,10 +90,29 @@
 
 .DownloadBTN-Container {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.App-Instructions {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.452);
+  border-radius: 1rem;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 /* If user is on a mobile device */
@@ -99,6 +120,10 @@
   .App {
     background-color: black;
     color: white
+  }
+
+  .App-Instructions {
+    display: none;
   }
 
   .App-Container {

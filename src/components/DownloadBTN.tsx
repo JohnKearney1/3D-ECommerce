@@ -8,7 +8,7 @@ export default function DownloadBTN({free} : {free?: boolean}) {
         return (
             <div className='DownloadBTN'>
                 <button>
-                    <p>Free Version</p>
+                    <p>Demo Version</p>
                     <DownloadIcon style={{fontSize: '1.25rem'}}/>
                 </button>
             </div>
