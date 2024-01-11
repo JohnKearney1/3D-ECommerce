@@ -11,6 +11,7 @@ function App() {
   const [countdownString, setCountdownString] = useState('');
   const [instructions, setInstructions] = useState(true);
   const [instructionText, setInstructionText] = useState('Loading experience...');
+  const [comingSoon, setComingSoon] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -45,6 +46,42 @@ function App() {
     // Clear the timer when the component unmounts
     return () => clearInterval(timer);
   }, []);
+
+  // If the current date is BEFORE 1/15/2024, set the countdown string to 'Coming Soon'
+  useEffect(() => {
+    const currentDate = new Date();
+    const targetDate = new Date('2/15/2024');
+    if (currentDate.getTime() < targetDate.getTime()) {
+      setComingSoon(true);
+    }
+  }
+  , []);
+
+  if (comingSoon) {
+    return (
+      <div className="App"
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '90vh',
+          flexDirection: 'column'
+        }}
+      >
+        <code>Coming Soon</code>
+        <br />
+        <br />
+        <code>1/15/2024</code>
+        <br />
+        <br />
+        <code><a href='kearneyjohn.com' style={{
+          color: 'lightgrey',
+          textDecoration: 'none',
+        }}>kearneyjohn.com</a></code>
+
+      </div>
+    )
+  }
 
   return (
     <div className="App">
