@@ -1,6 +1,6 @@
 import Spline from '@splinetool/react-spline';
 import './App.css';
-import DownloadIcon from '@mui/icons-material/Download';
+// import DownloadIcon from '@mui/icons-material/Download';
 import logo from './assets/img/logo192.png';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
@@ -11,7 +11,6 @@ function App() {
   const [countdownString, setCountdownString] = useState('');
   const [instructions, setInstructions] = useState(true);
   const [instructionText, setInstructionText] = useState('Loading experience...');
-  const [comingSoon, setComingSoon] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -47,42 +46,6 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // If the current date is BEFORE 1/15/2024, set the countdown string to 'Coming Soon'
-  useEffect(() => {
-    const currentDate = new Date();
-    const targetDate = new Date('2/15/2024');
-    if (currentDate.getTime() < targetDate.getTime()) {
-      setComingSoon(true);
-    }
-  }
-  , []);
-
-  if (comingSoon) {
-    return (
-      <div className="App"
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '90vh',
-          flexDirection: 'column'
-        }}
-      >
-        <code>Coming Soon</code>
-        <br />
-        <br />
-        <code>1/15/2024</code>
-        <br />
-        <br />
-        <code><a href='kearneyjohn.com' style={{
-          color: 'lightgrey',
-          textDecoration: 'none',
-        }}>kearneyjohn.com</a></code>
-
-      </div>
-    )
-  }
-
   return (
     <div className="App">
 
@@ -92,7 +55,7 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <code>{countdownString} :: Archive</code>
+          <code>{countdownString}</code>
         </motion.div>
 
         <motion.div className='App-Container'
@@ -100,8 +63,13 @@ function App() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         >
-          <h1>KEARNEY LAB VOLUME I</h1>
-          <h5 style={{userSelect: 'none'}}>Multi-Sample Kit By Kearneyonline</h5>
+          <h1>KEARNEY LAB</h1>
+          <h5 style={{userSelect: 'none', color: 'white', fontSize: '1rem'}}>Landers Edition</h5>
+          <br />
+          <h5 style={{userSelect: 'none', textAlign: 'center'}}>Multi-Sample Kit From
+          <br />
+           Kearney & landers</h5>
+          <br />
           <br />
           <div className='DownloadBTN-Container'>
               <DownloadBTN />
@@ -136,16 +104,16 @@ function App() {
             />
             
 
-            <motion.h1 style={{fontSize: '1.5rem'}}
+            <motion.h1 style={{fontSize: '1.2rem', textAlign: 'center'}}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-            >KEARNEY LAB VOLUME I</motion.h1>
+            >KEARNEY LAB - LANDERS EDITION</motion.h1>
             <motion.h5
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            >kearneyonline</motion.h5>
+            >kearneyonline & landers</motion.h5>
             <br />
             <motion.div className='App-Container-Sub'
             initial={{ opacity: 0 }}
@@ -163,6 +131,8 @@ function App() {
                 <p>14 Vocal Chops</p>
                 <p>40 SFX + Percs</p>
                 <p>15 Piano Midis</p>
+                <p>Phrases and Accents</p>
+                <p>One Shots</p>
                 <p>8 Full Length Samples (demos)</p>
                 <p>+ 4 Preset Banks</p>
               </div>
