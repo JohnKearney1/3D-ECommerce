@@ -1,8 +1,13 @@
-# Getting Started with Create React App
+# Kearney Labs - Interactive 3D Models in React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](/src/assets/img/screenshot.png)
+
+This project was completed to showcase a collaborative boutique sound kit in a fun, interactive web format. Designed for desktop, the user can use a virtual sampler to play the sounds of the kit. The user can also click around and use keystrokes to interact with the 3D model of the kit. The project was built using React, Three.js, and Spline.
+
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
